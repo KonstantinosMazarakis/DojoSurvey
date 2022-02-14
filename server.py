@@ -10,13 +10,10 @@ def main():
 @app.route('/formResults', methods=["POST"])
 def formResults():
     session["person"] = request.form
-    print("---------------------------------------")
     return redirect("/results")
 
 @app.route('/results')
 def results():
-    print("---------------------------------------")
-    print(session)
     name = session["person"]["name"]
     location = session["person"]["location"]
     language = session["person"]["language"]
